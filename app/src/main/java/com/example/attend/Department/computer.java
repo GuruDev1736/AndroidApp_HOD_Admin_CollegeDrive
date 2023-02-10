@@ -13,4 +13,9 @@ public class computer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_computer);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

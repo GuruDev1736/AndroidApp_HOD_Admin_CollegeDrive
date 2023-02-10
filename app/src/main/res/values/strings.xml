@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">attend</string>
     <string name="title_activity_admin_dashboard">admin_dashboard</string>
@@ -5,4 +6,14 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="todo" />
+
+    <string-array name="department_type">
+        <item> </item>
+        <item>Computer</item>
+        <item>Mechanical</item>
+        <item>Civil</item>
+        <item>E and TC</item>
+        <item>IT</item>
+        <item>Pharmacy</item>
+    </string-array>
 </resources>

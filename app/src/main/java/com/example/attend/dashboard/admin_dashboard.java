@@ -1,9 +1,13 @@
 package com.example.attend.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
+import com.example.attend.Department.computer;
 import com.example.attend.R;
+import com.example.attend.add_teacher;
 import com.example.attend.databinding.ActivityAdminDashboardBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,6 +31,13 @@ public class admin_dashboard extends AppCompatActivity {
 
         binding = ActivityAdminDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), add_teacher.class));
+            }
+        });
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
 

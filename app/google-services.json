@@ -1,33 +1,150 @@
 {
   "project_info": {
-    "project_number": "909732720539",
-    "project_id": "attendance-app-4b0c3",
-    "storage_bucket": "attendance-app-4b0c3.appspot.com"
+    "project_number": "857471964997",
+    "firebase_url": "https://my-internship-54678-default-rtdb.firebaseio.com",
+    "project_id": "my-internship-54678",
+    "storage_bucket": "my-internship-54678.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:909732720539:android:5bd25359a3291cc0e0fb3e",
+        "mobilesdk_app_id": "1:857471964997:android:7864c05b8847d67649102c",
         "android_client_info": {
           "package_name": "com.example.attend"
         }
       },
       "oauth_client": [
         {
-          "client_id": "909732720539-vtj5hjpqspm531o7vlifqatkkam3oedr.apps.googleusercontent.com",
+          "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC3E-D9NPI9LO1nEh9_vHeGTywnyD8LR6E"
+          "current_key": "AIzaSyDq_kJLWnG9oLpBSoDJojdCiL7Gh85fEnA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "909732720539-vtj5hjpqspm531o7vlifqatkkam3oedr.apps.googleusercontent.com",
+              "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857471964997:android:2dfc2cb69ef2544249102c",
+        "android_client_info": {
+          "package_name": "com.example.myinternship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq_kJLWnG9oLpBSoDJojdCiL7Gh85fEnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857471964997:android:a5bb631ea79a6a6349102c",
+        "android_client_info": {
+          "package_name": "com.guruprasad.callrecorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq_kJLWnG9oLpBSoDJojdCiL7Gh85fEnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857471964997:android:dd6cdd06b1bb82c749102c",
+        "android_client_info": {
+          "package_name": "com.guruprasad.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq_kJLWnG9oLpBSoDJojdCiL7Gh85fEnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857471964997:android:37ae9e434ac167d349102c",
+        "android_client_info": {
+          "package_name": "com.guruprasad.tranning1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq_kJLWnG9oLpBSoDJojdCiL7Gh85fEnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857471964997-nfo39gggpvhp970eedb1uidkgsuk03em.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
