@@ -14,6 +14,9 @@ public class teacher_model {
         this.phone = phone;
     }
 
+    public teacher_model() {
+    }
+
     public String getTeacher_name() {
         return teacher_name;
     }

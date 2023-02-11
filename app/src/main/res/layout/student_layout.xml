@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="25dp"
+    android:padding="15dp"
+    android:elevation="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/cardview"
+    app:cardUseCompatPadding="true"
+    tools:ignore="UnusedAttribute">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/student" />
+
+        <TextView
+            android:id="@+id/stud_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/img1"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/stud_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stud_name"
+            android:layout_alignStart="@+id/stud_name"
+            android:layout_alignEnd="@+id/stud_name"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:text="Department"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/stud_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stud_department"
+            android:layout_alignStart="@+id/stud_name"
+            android:layout_alignEnd="@+id/stud_name"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:text="Year"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/stud_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stud_year"
+            android:layout_alignStart="@+id/stud_name"
+            android:layout_alignEnd="@+id/stud_name"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:text="Phone No"
+            android:textColor="@color/black" />
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

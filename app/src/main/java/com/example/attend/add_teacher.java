@@ -1,5 +1,6 @@
 package com.example.attend;
 
+import static android.content.ContentValues.TAG;
 import static com.example.attend.Constants.error_toast;
 import static com.example.attend.Constants.success_toast;
 import static com.example.attend.R.array.department_type;
@@ -16,10 +17,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.attend.databinding.ActivityAddTeacherBinding;
@@ -42,6 +45,7 @@ import java.util.List;
 
 public class add_teacher extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ActivityAddTeacherBinding binding ;
+    RadioGroup radioGroup ;
     RadioButton radioButton ;
     Spinner spinner ;
     DatabaseReference databaseReference ;
@@ -52,6 +56,9 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
         binding = ActivityAddTeacherBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        radioGroup = findViewById(R.id.radio_layout);
+
+
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Teachers");
 
@@ -61,13 +68,11 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
         binding.department.setAdapter(adapter);
         binding.department.setOnItemSelectedListener(this);
 
-        int id=  binding.radioLayout.getCheckedRadioButtonId();
-        radioButton = findViewById(id);
-
         binding.submitTeacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                int id=  binding.radioLayout.getCheckedRadioButtonId();
+                radioButton = findViewById(id);
 
                 String teacher_name = binding.teacherName.getText().toString();
                 String teacher_qual = binding.teacherQualification.getText().toString();
@@ -117,25 +122,32 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
                             public void onSuccess(Void unused) {
                                 success_toast(getApplicationContext(),"Teacher Added Successfully");
                                 pd.dismiss();
+
+                                // setting the edittext null after the get stored in database
                                 binding.teacherName.setText(null);
                                 binding.teacherQualification.setText(null);
                                 binding.teacherEmail.setText(null);
                                 binding.teacherPassword.setText(null);
                                 binding.teacherPhoneNo.setText(null);
 
-                                Dexter.withContext(view.getContext()).withPermissions(Manifest.permission.SEND_SMS, Manifest.permission.RECEIVE_SMS
+                                // granting the permissions using Dexter lib
+                                //sending sms using intent
+
+                                Dexter.withContext(getApplicationContext()).withPermissions(Manifest.permission.SEND_SMS, Manifest.permission.RECEIVE_SMS
                                         , Manifest.permission.READ_SMS).withListener(new MultiplePermissionsListener() {
                                     @Override
                                     public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
-                                        SmsManager smsManager = SmsManager.getDefault();
-                                        smsManager.sendTextMessage(phone,null,message,null,null);
-                                    }
 
+                                        SmsManager smsManager = SmsManager.getDefault();
+                                        smsManager.sendTextMessage(phone, null, message, null, null);
+
+                                    }
                                     @Override
                                     public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
                                         permissionToken.continuePermissionRequest();
                                     }
                                 }).check();
+
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -153,6 +165,7 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
     }
 
 
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -167,4 +180,6 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+
 }
