@@ -29,5 +29,9 @@
     <string name="contact">Contact</string>
     <string name="skills">Skills</string>
     <string name="ratings">Star Ratings</string>
+    <string name="please_type_the_verification_code_sent_to_n_9xxxxxxx19">Please type the verification code sent to\n+9XXXXXXX19</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="show_error">SHOW ERROR</string>
+    <string name="show_success">SHOW Success</string>
     <string name="samplereview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium bibendum sapien, ut euismod massa. Duis convallis sem sed turpis elementum auctor.</string>
 </resources>

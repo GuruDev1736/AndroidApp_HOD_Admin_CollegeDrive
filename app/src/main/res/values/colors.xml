@@ -12,6 +12,10 @@
     <color name="goodgrey">#535353</color>
     <color name="blue">#293859</color>
     <color name="lightgrey">#EEEEEE</color>
+    <color name="colorAccentlight">#8509f2</color>
+    <color name="red">#e60000</color>
+    <color name="green">#33cc33</color>
+    <color name="whiteoff">#606060</color>
     <color name="colorPrimary">#26a69a</color>
     <color name="colorPrimaryDark">#009688</color>
     <color name="colorAccent">#048b7a</color>

@@ -56,5 +56,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation 'com.firebaseui:firebase-ui-database:8.0.2'
 
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+
 
 }
