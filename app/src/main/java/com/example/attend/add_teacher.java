@@ -30,6 +30,8 @@ import com.example.attend.model.teacher_model;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.karumi.dexter.Dexter;
@@ -50,6 +52,7 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
     Spinner spinner ;
     DatabaseReference databaseReference ;
     FirebaseDatabase database ;
+    FirebaseAuth auth;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +64,7 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Teachers");
+        auth = FirebaseAuth.getInstance();
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, department_type , android.R.layout.simple_spinner_item);
@@ -96,9 +100,9 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
                     return;
                 }
 
-                if (password.length() !=6)
+                if (password.length() < 8)
                 {
-                    error_toast(getApplicationContext() , "Password Must be 6 Characters");
+                    error_toast(getApplicationContext() , "Password Must be 10 Characters");
                     return;
                 }
 
@@ -115,51 +119,63 @@ public class add_teacher extends AppCompatActivity implements AdapterView.OnItem
                 pd.setCanceledOnTouchOutside(false);
                 pd.show();
 
-                teacher_model model = new teacher_model(teacher_name,teacher_qual,department,year,email,password,phone);
-                databaseReference.child(department).child(databaseReference.push().getKey()).setValue(model)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                success_toast(getApplicationContext(),"Teacher Added Successfully");
-                                pd.dismiss();
 
-                                // setting the edittext null after the get stored in database
-                                binding.teacherName.setText(null);
-                                binding.teacherQualification.setText(null);
-                                binding.teacherEmail.setText(null);
-                                binding.teacherPassword.setText(null);
-                                binding.teacherPhoneNo.setText(null);
-
-                                // granting the permissions using Dexter lib
-                                //sending sms using intent
-
-                                Dexter.withContext(getApplicationContext()).withPermissions(Manifest.permission.SEND_SMS, Manifest.permission.RECEIVE_SMS
-                                        , Manifest.permission.READ_SMS).withListener(new MultiplePermissionsListener() {
+                auth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        teacher_model model = new teacher_model(teacher_name,teacher_qual,department,year,email,password,phone);
+                        databaseReference.child(department).child(databaseReference.push().getKey()).setValue(model)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
-                                    public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
+                                    public void onSuccess(Void unused) {
+                                        databaseReference.child("Profile").child(FirebaseAuth.getInstance().getUid()).setValue(model);
+                                        success_toast(getApplicationContext(),"Teacher Added Successfully");
+                                        pd.dismiss();
 
-                                        SmsManager smsManager = SmsManager.getDefault();
-                                        smsManager.sendTextMessage(phone, null, message, null, null);
+                                        // setting the edittext null after the get stored in database
+                                        binding.teacherName.setText(null);
+                                        binding.teacherQualification.setText(null);
+                                        binding.teacherEmail.setText(null);
+                                        binding.teacherPassword.setText(null);
+                                        binding.teacherPhoneNo.setText(null);
+
+                                        // granting the permissions using Dexter lib
+                                        //sending sms using intent
+
+                                        Dexter.withContext(getApplicationContext()).withPermissions(Manifest.permission.SEND_SMS, Manifest.permission.RECEIVE_SMS
+                                                , Manifest.permission.READ_SMS).withListener(new MultiplePermissionsListener() {
+                                            @Override
+                                            public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
+
+                                                SmsManager smsManager = SmsManager.getDefault();
+                                                smsManager.sendTextMessage(phone, null, message, null, null);
+
+                                            }
+                                            @Override
+                                            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
+                                                permissionToken.continuePermissionRequest();
+                                            }
+                                        }).check();
+
 
                                     }
+                                }).addOnFailureListener(new OnFailureListener() {
                                     @Override
-                                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
-                                        permissionToken.continuePermissionRequest();
+                                    public void onFailure(@NonNull Exception e) {
+                                        pd.dismiss();
+                                        error_toast(getApplicationContext(),"Error : "+e.getMessage() );
                                     }
-                                }).check();
+                                });
 
 
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                pd.dismiss();
-                                error_toast(getApplicationContext(),"Error : "+e.getMessage() );
-                            }
-                        });
-
-
-
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        error_toast(getApplicationContext(),"Error : "+e.getMessage());
+                        pd.dismiss();
+                    }
+                });
             }
         });
     }

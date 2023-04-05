@@ -31,7 +31,6 @@ public class admin_sign_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_sign_up);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Objects.requireNonNull(getSupportActionBar()).hide();
 
                 email = findViewById(R.id.email);
                 password = findViewById(R.id.password);
@@ -103,26 +102,14 @@ public class admin_sign_up extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         startActivity(new Intent(getApplicationContext(),Admin_login.class));
-                        finish();
                     }
                 });
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),Admin_login.class));
     }
 }

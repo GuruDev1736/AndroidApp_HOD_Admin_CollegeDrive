@@ -1,16 +1,14 @@
-package com.example.attend.Autenthication;
+package com.example.attend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.attend.R;
-
-public class Teacher_login extends AppCompatActivity {
+public class select_attendance_option extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_login);
+        setContentView(R.layout.activity_select_attendance_option);
     }
 }

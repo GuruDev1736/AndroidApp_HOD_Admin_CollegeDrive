@@ -58,5 +58,8 @@ dependencies {
 
     implementation 'com.github.aabhasr1:OtpView:v1.1.2'
 
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+
+
 
 }

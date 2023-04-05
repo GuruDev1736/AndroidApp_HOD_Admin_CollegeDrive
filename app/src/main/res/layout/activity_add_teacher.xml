@@ -222,7 +222,7 @@
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeColor="#448AFF"
                 app:counterEnabled="true"
-                app:counterMaxLength="6"
+                app:counterMaxLength="8"
                 app:endIconMode="password_toggle"
                 app:endIconTint="#6A6767"
                 app:hintEnabled="true"

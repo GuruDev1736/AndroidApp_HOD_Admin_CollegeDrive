@@ -1,26 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Department.civil">
 
     <RelativeLayout
         android:id="@+id/spinner_layout"
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/spinner_border"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/year_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:spinnerMode="dropdown"
+            android:tooltipText="Select Department"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/spinner_div_layout"
+        android:layout_width="150dp"
+        android:layout_height="50sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/spinner_layout"
         android:background="@drawable/spinner_border"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/civil_spinner"
+            android:id="@+id/div_spinner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
@@ -43,13 +77,25 @@
 
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_div_layout"
+        android:layout_alignStart="@+id/spinner_layout"
+        android:layout_alignEnd="@+id/spinner_div_layout"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:text="Submit" />
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/civil_rec"
+        android:id="@+id/comp_rec"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/spinner_layout"
+        android:layout_below="@+id/submit"
         android:layout_marginTop="20dp" />
-
 
 
 </RelativeLayout>
