@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
                 new MaterialAlertDialogBuilder(getContext(), R.style.AlertDialogTheme)
                         .setTitle("Select Category")
                         .setMessage("Select the following Option")
-                        .setIcon(R.drawable.comp_dept)
+                        .setIcon(R.drawable.mechanical_dept)
                         .setPositiveButton("Teacher", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -96,7 +96,7 @@ public class HomeFragment extends Fragment {
                 new MaterialAlertDialogBuilder(getContext(), R.style.AlertDialogTheme)
                         .setTitle("Select Category")
                         .setMessage("Select the following Option")
-                        .setIcon(R.drawable.comp_dept)
+                        .setIcon(R.drawable.civil_dept)
                         .setPositiveButton("Teacher", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -121,7 +121,7 @@ public class HomeFragment extends Fragment {
                 new MaterialAlertDialogBuilder(getContext(), R.style.AlertDialogTheme)
                         .setTitle("Select Category")
                         .setMessage("Select the following Option")
-                        .setIcon(R.drawable.comp_dept)
+                        .setIcon(R.drawable.e_and_tc_dep)
                         .setPositiveButton("Teacher", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -146,7 +146,7 @@ public class HomeFragment extends Fragment {
                 new MaterialAlertDialogBuilder(getContext(), R.style.AlertDialogTheme)
                         .setTitle("Select Category")
                         .setMessage("Select the following Option")
-                        .setIcon(R.drawable.comp_dept)
+                        .setIcon(R.drawable.it)
                         .setPositiveButton("Teacher", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -171,7 +171,7 @@ public class HomeFragment extends Fragment {
                 new MaterialAlertDialogBuilder(getContext(), R.style.AlertDialogTheme)
                         .setTitle("Select Category")
                         .setMessage("Select the following Option")
-                        .setIcon(R.drawable.comp_dept)
+                        .setIcon(R.drawable.pharmacy_dep)
                         .setPositiveButton("Teacher", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {

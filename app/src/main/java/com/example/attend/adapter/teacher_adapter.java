@@ -44,6 +44,7 @@ public class teacher_adapter extends FirebaseRecyclerAdapter<teacher_model,teach
                intent.putExtra("phone",model.getPhone());
                intent.putExtra("email",model.getEmail());
                intent.putExtra("password",model.getPassword());
+               intent.putExtra("qua",model.getTeacher_qualification());
                view.getContext().startActivity(intent);
 
 

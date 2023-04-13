@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.attend.R;
+import com.example.attend.StudentProfileActivity;
 import com.example.attend.model.student_model;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -39,22 +40,22 @@ public class student_adapter extends FirebaseRecyclerAdapter<student_model,stude
         holder.year.setText("Year : "+model.getYear());
         holder.Phone.setText("Phone No : "+model.getStud_no());
 
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), student_profile.class);
-//                intent.putExtra("name",model.getStud_name());
-//                intent.putExtra("department",model.getDepartment());
-//                intent.putExtra("year",model.getYear());
-//                intent.putExtra("stud_no",model.getStud_no());
-//                intent.putExtra("email",model.getStud_email());
-//                intent.putExtra("parent_no",model.getParent_no());
-//                intent.putExtra("div",model.getDivision());
-//                view.getContext().startActivity(intent);
-//
-//
-//            }
-//        });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), StudentProfileActivity.class);
+                intent.putExtra("name",model.getStud_name());
+                intent.putExtra("department",model.getDepartment());
+                intent.putExtra("year",model.getYear());
+                intent.putExtra("stud_no",model.getStud_no());
+                intent.putExtra("email",model.getStud_email());
+                intent.putExtra("parent_no",model.getParent_no());
+                intent.putExtra("div",model.getDivision());
+                view.getContext().startActivity(intent);
+
+
+            }
+        });
 
 
 

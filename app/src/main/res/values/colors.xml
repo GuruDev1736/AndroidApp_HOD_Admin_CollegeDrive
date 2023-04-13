@@ -19,4 +19,5 @@
     <color name="colorPrimary">#26a69a</color>
     <color name="colorPrimaryDark">#009688</color>
     <color name="colorAccent">#048b7a</color>
+    <color name="blue_app">#03A9F4</color>
 </resources>

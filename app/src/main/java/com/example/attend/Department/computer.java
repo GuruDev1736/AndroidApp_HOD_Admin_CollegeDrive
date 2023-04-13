@@ -1,6 +1,7 @@
 package com.example.attend.Department;
 
 import static com.example.attend.Constants.error_toast;
+import static com.example.attend.Constants.info_toast;
 import static com.example.attend.R.array.choice;
 import static com.example.attend.R.array.department_type;
 
@@ -49,6 +50,8 @@ public class computer extends AppCompatActivity implements AdapterView.OnItemSel
         binding.submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                info_toast(getApplicationContext(),"Please Wait Fetching Data");
+
                 String year = binding.yearSpinner.getSelectedItem().toString();
                 String division = binding.divSpinner.getSelectedItem().toString();
 
